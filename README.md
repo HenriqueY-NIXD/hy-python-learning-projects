@@ -10,7 +10,8 @@ Small projects I'm building while learning Python.
 
 ## Projects
 
-- [No projects, yet]
+* Module 1
+    * 1 - calc-grades-average
 
 ## License
 
