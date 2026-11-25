@@ -16,11 +16,7 @@
 
 ## 💡 The Idea
 
-**Problem:** <What problem or curiosity motivated this project?>
-
-**Proposed solution:** <How the project addresses it, in 2–4 sentences.>
-
-**Learning goal:** <What you want to learn or practice with it (optional).>
+<What problem or curiosity motivated this project?>
 
 ### Features
 
