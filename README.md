@@ -1,2 +1,17 @@
 # hy-python-learning-projects
-Projects in python for me to better learn concepts and syntax
+
+Small projects I'm building while learning Python.
+
+## Rules
+
+- No AI for writing the main code
+- Finish a project before starting the next one
+- Use latest version PYTHON
+
+## Projects
+
+- [No projects, yet]
+
+## License
+
+MIT
