@@ -2,9 +2,9 @@
 
 > A command-line program that records students' grades and reports who passed, who needs a make-up exam and who failed.
 
-| Status | Python | Started | Last updated | Tags |
-|---|---|---|---|---|
-| 💡 Idea <!-- 💡 Idea · 🟡 In progress · 🟢 Working · 🔵 Done · ⏸️ Paused · 🔴 Abandoned --> | 3.12 | 2026-11-25 | 2026-11-25 | `cli` `functions` `exercise` |
+| Status | Python | Started | Last updated |
+|---|---|---|---|
+| 💡 Idea | 3.12 | 2026-11-25 | 2026-11-26 |
 
 ---
 
@@ -12,52 +12,108 @@
 
 **Problem:** A teacher wants to record the grades of the students in a class and see, from the terminal, who passed, who needs a make-up exam and who failed.
 
-### Data structure
-
-```python
-class_grades = {
-    "Ana": [8.5, 7.0, 9.0],
-    "Bruno": [6.0, 6.0],
-}
-```
-
-### Features
-
-- [ ] adds a student with an empty grade list. Raises `ValueError` if the name already exists.
-- [ ] accepts only grades from 0 to 10 and only for students that exist. Raises `ValueError` in both error cases.
-- [ ] returns the arithmetic mean of a list of grades, or `0.0` if the list is empty.
-- [ ] returns a string based on the average:
-  - average ≥ 7.0 → `"Passed"`
-  - 5.0 ≤ average < 7.0 → `"Make-up exam"`
-  - average < 5.0 → `"Failed"`
-- [ ] average of all the students' averages.
-- [ ] list of `(name, average)` tuples sorted from highest to lowest average.
-- [ ] **Extra — Weighted average:** allow each grade to have a weight (e.g. exam weight 2, assignment weight 1).
-- [ ] **Extra — CLI arguments:** accept direct commands with `argparse`, such as `python main.py report` or `python main.py grade Ana 8.5`.
-- [ ] **Extra — Persistence:** save and load the class from a JSON file, so data survives between runs.
+---
 
 ### Expected output
 
+
+#### Selection screen
 ```text
-Student name: Ana
-✔ Student "Ana" added.
+Students 1/1
 
-Student name: Ana
-Grade: 8.5
-✔ Grade 8.5 added for Ana.
+1 - Bruno
+2 - Carla
+3 - Marcelo
 
-Student name: Ana
-Grade: 11
+Type student or command (Type -h for manual): _
+```
+
+#### Help screen
+```text
+Student: -h
+- Type a student by name or "ID:<id>" to select a student by ID
+- Type ">" to next page 
+- Type "<" to previous page 
+- Type "!" to delete a student
+- Type "?" to summarize grades
+- Type "-h" for help manual
+
+Type "exit" to leave manual: 
+```
+
+#### Creation
+```text
+Create student: ANA
+Do you want to create student "ANA"? (Y/n)
+
+✔ Student "ANA" added.
+Type student or command (Type -h for manual): _
+```
+
+#### Deletion
+```text
+Delete student: ANA
+Do you want to delete student "ANA"? (Y/n)
+
+✔ Student "ANA" deleted.
+Type student or command (Type -h for manual): _
+```
+
+#### Select student
+```text
+Type student or command (Type -h for manual): ANA
+
+Select student "ANA"? (Y/n)
+
+Student: ANA
+Math: 0.0
+English: 0.0
+
+Average: 0.0
+
+Do you want to change ANA's grade (Y/n)? _
+```
+
+#### Change student grade
+```text
+Do you want to change ANA's grade (Y/n)? Y
+
+Math: 0.0 <-
+English: 0.0
+[ Save grades ]
+
+Math: _
 ✘ Invalid grade: must be between 0 and 10.
+Math: 10.0
 
+Math: 10.0 
+English: 0.0
+[ Save grades ] <-
+```
+
+#### Summary
+```text
 --- Class report ---
-1. Ana     | Average: 8.17 | Passed
-2. Bruno   | Average: 6.00 | Make-up exam
-3. Carla   | Average: 4.50 | Failed
+
+1. ANA     | Average: 8.17 | Passed
+2. BRUNO   | Average: 6.00 | Make-up exam
+3. CARLA   | Average: 4.50 | Failed
+
 Class average: 6.22
 ```
 
 ---
+
+### Features
+
+- [ ] student selection screen (max 10 students)
+- [ ] help screen 
+- [ ] student creation
+- [ ] student deletion
+- [ ] student selection
+- [ ] student's grade change
+- [ ] students summary
+- [ ] **Extra — Persistence:** save and load the class from a JSON file, so data survives between runs.
 
 ## 🚀 Getting Started
 
@@ -84,16 +140,20 @@ class-grade-calculator/
 
 ## 🔍 Observations
 
-<!-- Key facts about the project's current state. -->
+- average ≥ 7.0 → `"Passed"`
+- 5.0 ≤ average < 7.0 → `"Make-up exam"`
+- average < 5.0 → `"Failed"`
 
 
-## 📝 Notes
+## 📝 Logs
 
 <!-- Dev log: dated entries on lessons learned, problems and discoveries. Newest first. -->
 
 ### 2026-11-25
-- Project created. Requirements defined.
+- Project created.
 
+### 2026-11-26
+- Requirements defined.
 ---
 
 ## 🔗 References
