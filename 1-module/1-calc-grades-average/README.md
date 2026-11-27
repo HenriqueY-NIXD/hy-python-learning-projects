@@ -4,7 +4,7 @@
 
 | Status | Python | Started | Last updated |
 |---|---|---|---|
-| 💡 Idea | 3.12 | 2026-11-25 | 2026-11-26 |
+| 🟢 Working | 3.12 | 2026-11-25 | 2026-11-26 |
 
 ---
 
@@ -37,6 +37,7 @@ Student: -h
 - Type "!" to delete a student
 - Type "?" to summarize grades
 - Type "-h" for help manual
+- Type "-x" to exit
 
 Type "exit" to leave manual: 
 ```
@@ -154,10 +155,15 @@ class-grade-calculator/
 
 ### 2026-11-26
 - Requirements defined.
+
+### 2026-11-27
+- Initial attempts to student's screen.
 ---
 
-## 🔗 References
+## 🔗 References (if new knowledge)
+[Clear the terminal in python](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python)
 
+[How do i pad a string with zeros?](https://stackoverflow.com/questions/339007/how-do-i-pad-a-string-with-zeros)
 
 ---
 
